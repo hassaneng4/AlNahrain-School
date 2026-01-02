@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل استخدام نظام إعدادية النهرين</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0056b3;
+            --accent: #00a8cc;
+            --bg: #fdfdfd;
+            --text: #333;
+            --light-gray: #f4f7f6;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin: 0;
+            font-weight: 900;
+        }
+
+        h2 {
+            margin-top: 40px;
+            color: var(--primary);
+            font-size: 1.5rem;
+            border-right: 5px solid var(--accent);
+            padding-right: 15px;
+            background: linear-gradient(90deg, var(--light-gray) 0%, transparent 100%);
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 5px;
+        }
+
+        h3 {
+            color: #444;
+            font-size: 1.2rem;
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        p,
+        li {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        ul,
+        ol {
+            padding-right: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .role-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #fff;
+            margin-left: 10px;
+        }
+
+        .badge-admin {
+            background: #dc3545;
+        }
+
+        .badge-teacher {
+            background: #28a745;
+        }
+
+        .badge-student {
+            background: #17a2b8;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1rem;
+        }
+
+        th,
+        td {
+            text-align: right;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: #fff;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .note-box {
+            background-color: #e7f5ff;
+            border-right: 4px solid var(--primary);
+            padding: 15px 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            color: #004085;
+            font-weight: 600;
+        }
+
+        .print-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            font-family: 'Cairo', sans-serif;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: block;
+            margin: 0 auto 30px auto;
+            transition: 0.3s;
+        }
+
+        .print-btn:hover {
+            background: #004494;
+        }
+
+        @media print {
+            .print-btn {
+                display: none;
+            }
+
+            .container {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+            }
+
+            body {
+                background: #fff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="print-btn" onclick="window.print()">🖨️ طباعة الدليل / حفظ كـ PDF</button>
+
+    <div class="container">
+        <header>
+            <h1>دليل استخدام نظام إعدادية النهرين</h1>
+            <p>الدليل الرسمي والشامل للإدارة، الكادر التدريسي، والطلبة</p>
+        </header>
+
+        <h2>📋 نظرة عامة على الصلاحيات</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>الدور</th>
+                        <th>الصلاحيات الرئيسية</th>
+                        <th>طريقة الدخول</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="role-badge badge-admin">المدير (Admin)</span></td>
+                        <td>تحكم كامل، إدارة المستخدمين، قبول الطلبات، نشر الأخبار</td>
+                        <td>كود خاص (admin)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="role-badge badge-teacher">المدرس</span></td>
+                        <td>رصد الدرجات، سجل المتابعة، قوائم الطلاب</td>
+                        <td>كود خاص يمنح من الإدارة</td>
+                    </tr>
+                    <tr>
+                        <td><span class="role-badge badge-student">الطالب</span></td>
+                        <td>مشاهدة الدرجات، متابعة الحضور، جدول الدروس</td>
+                        <td>البريد الإلكتروني + كلمة المرور</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>🔐 أولاً: تسجيل الدخول</h2>
+
+        <h3>1️⃣ للإدارة والأساتذة</h3>
+        <ol>
+            <li>افتح الموقع واضغط على زر <strong>"بوابة الأساتذة"</strong>.</li>
+            <li>أدخل <strong>كود الدخول</strong> الخاص بك.</li>
+            <li>للمدير الكود الافتراضي هو <code>admin</code> أو <code>1234</code>.</li>
+        </ol>
+
+        <h3>2️⃣ للطلبة</h3>
+        <ol>
+            <li>اضغط على <strong>"بوابة الطالب"</strong>.</li>
+            <li>لأول مرة: اختر <strong>"تسجيل حساب جديد"</strong> واملأ البيانات.</li>
+            <li>للدخول لاحقاً: استخدم ايميلك وكلمة المرور.</li>
+        </ol>
+
+        <h2>🛠️ ثانياً: مهام الإدارة (للمدير فقط)</h2>
+        <p>عند الدخول بحساب المدير، ستظهر لك لوحة التحكم المركزية:</p>
+
+        <h3>👥 1. إدارة المستخدمين</h3>
+        <ul>
+            <li><strong>إضافة مدرس:</strong> من تبويب "الكادر"، ادخل الاسم والمواد واضغط "إضافة".</li>
+            <li><strong>حظر طالب:</strong> ابحث عن الطالب واضغط "حظر" لإيقاف حسابه مؤقتاً.</li>
+            <li><strong>تواصل سريع:</strong> أيقونة واتساب تتيح لك مراسلة ولي الأمر فوراً.</li>
+        </ul>
+
+        <h3>📢 2. واجهة المدرسة</h3>
+        <ul>
+            <li><strong>شريط الأخبار:</strong> اكتب خبراً عاجلاً ليظهر أسفل الشاشة لجميع المستخدمين.</li>
+            <li><strong>لوحة الشرف:</strong> حدث أسماء "الأوائل" لتظهر صورهم في الواجهة الرئيسية.</li>
+        </ul>
+
+        <h2>📝 ثالثاً: نظام رصد الدرجات (للمدرسين)</h2>
+        <p>بعد تسجيل الدخول كـ "مدرس":</p>
+        <ol>
+            <li>اختر <strong>الشعبة</strong> (مثلاً: الأمن السيبراني - A).</li>
+            <li>اختر <strong>المادة</strong> التي تدرسها.</li>
+            <li>ستظهر لك قائمة الطلاب، يمكنك:
+                <ul>
+                    <li>رصد الدرجة النهائية مباشرة.</li>
+                    <li>الضغط على <strong>"السجل الكامل"</strong> لفتح سجل إلكتروني مفصل (يومي، شهري، شفوي).</li>
+                </ul>
+            </li>
+        </ol>
+        <div class="note-box">
+            ✅ ملاحظة: أي درجة ترصدها يتم حفظها فوراً وتظهر للطالب في لوحته في نفس اللحظة.
+        </div>
+
+        <h2>📲 رابعاً: الاستخدام عبر الهاتف (PWA)</h2>
+        <p>يمكن تثبيت النظام كتطبيق على الهاتف:</p>
+        <ul>
+            <li><strong>الآيفون:</strong> من متصفح Safari > اضغط مشاركة > "Add to Home Screen".</li>
+            <li><strong>الأندرويد:</strong> من متصفح Chrome > القائمة > "Install App".</li>
+        </ul>
+
+        <div
+            style="text-align: center; margin-top: 50px; border-top: 1px solid #eee; padding-top: 20px; font-size: 0.9rem; color: #888;">
+            تم تصميم هذا النظام لصالح إعدادية النهرين المهنية<br>
+            2025 - 2026
+        </div>
+    </div>
+
+</body>
+
+</html>
